@@ -1,6 +1,6 @@
 <?php
 
-$template = file_get_contents("../../frontend/listPlayers/index.html");
+$template = file_get_contents("../../templates/listPlayers/index.html");
 
 $template = str_replace("<!--Teste-->", "OI, Active Record", $template);
 
