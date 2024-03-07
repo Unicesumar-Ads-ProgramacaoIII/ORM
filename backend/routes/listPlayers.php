@@ -1,13 +1,19 @@
 <?php
 
+require '../dataMapper/PlayerDM.php';
+require '../dataMapper/DataMapper.php';
+require '../LayoutBuilder.php';
+use dataMapper\DataMapper;
 
-$template = file_get_contents("../../templates/listPlayers/index.html");
-echo \dataMapper\DataMapper::class;
-//$jogadores = \dataMapper\DataMapper::listPlayers();
-//foreach ($jogadores as $jogador){
-//
-//}
+$players = DataMapper::listPlayers();
+$tb_rows = "";
 
-//$template = str_replace("<!--Teste-->", $jogadores, $template);
-//
-//echo $template;
+foreach ($players as $player){
+    $row = $player->toHtmlRow();
+    $tb_rows .= $row;
+}
+
+$page_content = file_get_contents("../../templates/listPlayers/index.html");
+$page_content = str_replace("<!--CONTENT-->", $tb_rows, $page_content);
+
+LayoutBuilder::renderPage($page_content);
