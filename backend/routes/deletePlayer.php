@@ -8,6 +8,6 @@ if(!isset($_GET['id'])){
     header("Location: " . "/backend/routes/listPlayers.php");
 }
 
-$success = DataMapper::deletePlayerById($_GET['id']);
-$page = file_get_contents($success ? "../../templates/deletePlayer/success.html" : "../../templates/deletePlayer/error.html");
+$success = DataMapper::deletePlayer($_GET['id']);
+$page = file_get_contents($success ? "../../templates/deletePlayer/success.html" : "../../templates/components/error404.html");
 LayoutBuilder::renderPage($page);

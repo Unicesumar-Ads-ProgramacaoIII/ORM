@@ -2,10 +2,6 @@
 
 namespace dataMapper;
 
-require '../Connection.php';
-
-use Connection;
-
 class PlayerDM
 {
     public $id;
@@ -30,7 +26,7 @@ class PlayerDM
             <td>$this->nome</td>
             <td>$this->email</td>
             <td>$this->data_cadastro</td>
-            <td><a href='/backend/routes/alterPlayer.php/?id=$this->id'> - </a></td>
+            <td><a href='/backend/routes/alterPlayerForm.php/?id=$this->id'> - </a></td>
             <td><a href='/backend/routes/deletePlayerForm.php/?id=$this->id'><0></a></td>
         </tr>";
     }

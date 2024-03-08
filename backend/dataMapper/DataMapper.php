@@ -43,12 +43,26 @@ class DataMapper
         return new PlayerDM($db->lastInsertId(), $name, $email, $senha, $data_cadastro);
     }
 
-    public static function deletePlayerById($id)
+    public static function deletePlayer($id)
     {
         $db = \Connection::getInstance();
         $stmt = $db->prepare('DELETE FROM tb_jogadores WHERE id = :id');
         $stmt->bindParam(':id', $id);
         $stmt->execute();
         return $stmt->rowCount() > 0;
+    }
+
+    public static function updatePlayer($id, $name, $email)
+    {
+        // $db = \Connection::getInstance();
+        // $stmt = $db->prepare('UPDATE tb_jogadores
+        //     set nome = :nome, email = :email
+        // WHERE id = :id');
+        // $stmt->bindParam(':id', $id);
+        // $stmt->bindParam(':nome', $name);
+        // $stmt->bindParam(':email', $email);
+        // $stmt->execute();
+        // return $stmt->rowCount() > 0;
+        return false;
     }
 }

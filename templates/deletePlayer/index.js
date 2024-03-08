@@ -1,7 +1,7 @@
 (function(window, document,undefined){
-    function excluir(event){
-        const excluir = confirm("Tem Certeza que deseja excluir este jogador?");
-        if(excluir){
+    function exclude(event){
+        const exclude = confirm("Tem Certeza que deseja exclude este jogador?");
+        if(exclude){
             const id = document.getElementById('id').value;
             window.location.replace(`/backend/routes/deletePlayer.php/?id=${id}`);
         }
@@ -9,8 +9,8 @@
     }
 
     function init(){
-        const form = document.getElementById('formExcluir');
-        form.addEventListener("submit", excluir);
+        const form = document.getElementById('formExclude');
+        form.addEventListener("submit", exclude);
     }
 
 
