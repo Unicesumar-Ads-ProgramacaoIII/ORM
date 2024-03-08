@@ -2,6 +2,8 @@
 
 namespace dataMapper;
 
+require_once '../Connection.php';
+
 use DateTime;
 
 class DataMapper
@@ -23,10 +25,8 @@ class DataMapper
         foreach ($players_db as $player_db) {
             list('id' => $id, 'nome' => $nome, 'email' => $email, 'data_cadastro' => $data_cadastro, 'senha' => $senha) = $player_db;
             array_push($players, new PlayerDM($id, $nome, $email, $senha, $data_cadastro));
-
         }
         return $players;
-
     }
 
     public static function createPlayer($name, $email, $senha)
@@ -45,7 +45,6 @@ class DataMapper
 
     public static function deletePlayerById($id)
     {
-        //TODO BUG
         $db = \Connection::getInstance();
         $stmt = $db->prepare('DELETE FROM tb_jogadores WHERE id = :id');
         $stmt->bindParam(':id', $id);

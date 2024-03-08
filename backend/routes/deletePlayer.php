@@ -1,5 +1,4 @@
 <?php
-//TODO THIS IS A BAD IDEA!!!! its a public route that just deletes things
 
 require '../dataMapper/DataMapper.php';
 require '../LayoutBuilder.php';
