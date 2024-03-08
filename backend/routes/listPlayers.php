@@ -14,6 +14,6 @@ foreach ($players as $player){
 }
 
 $page_content = file_get_contents("../../templates/listPlayers/index.html");
-$page_content = str_replace("<!--CONTENT-->", $tb_rows, $page_content);
+$page_content = str_replace("<!--TABLE CONTENT-->", $tb_rows, $page_content);
 
 LayoutBuilder::renderPage($page_content);
