@@ -1,8 +1,8 @@
 <?php
 
-namespace dataMapper;
+namespace routes\dataMapper;
 
-require_once '../Connection.php';
+require_once '../../Connection.php';
 
 use DateTime;
 
@@ -54,15 +54,14 @@ class DataMapper
 
     public static function updatePlayer($id, $name, $email)
     {
-        // $db = \Connection::getInstance();
-        // $stmt = $db->prepare('UPDATE tb_jogadores
-        //     set nome = :nome, email = :email
-        // WHERE id = :id');
-        // $stmt->bindParam(':id', $id);
-        // $stmt->bindParam(':nome', $name);
-        // $stmt->bindParam(':email', $email);
-        // $stmt->execute();
-        // return $stmt->rowCount() > 0;
-        return false;
+         $db = \Connection::getInstance();
+         $stmt = $db->prepare('UPDATE tb_jogadores
+             set nome = :nome, email = :email
+         WHERE id = :id');
+         $stmt->bindParam(':id', $id);
+         $stmt->bindParam(':nome', $name);
+         $stmt->bindParam(':email', $email);
+         $stmt->execute();
+         return $stmt->rowCount() > 0;
     }
 }
