@@ -1,4 +1,4 @@
-<script src="/templates/alterPlayer/index.js"></script>
+<script src="/dataMapper/templates/alterPlayer/index.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <form id="formAlter">
     <input id="id" name="id" placeholder="id" value="<--id-->" disabled/>
@@ -10,11 +10,11 @@
     <h3>
         Jogador(a) alterado com sucesso
     </h3>
-    <a type="button" href="/backend/routes/dataMapper/listPlayers.php">Ir para a listagem</a>
+    <a type="button" href="/dataMapper/backend/routes/listPlayers.php">Ir para a listagem</a>
 </div>
 <div id="error" hidden>
     <h3>
         Ocorreu algum erro ao alterar o jogador.
     </h3>
-    <a type="button" href="/backend/routes/dataMapper/listPlayers.php">Ir para a listagem</a>
+    <a type="button" href="/dataMapper/backend/routes/listPlayers.php">Ir para a listagem</a>
 </div>

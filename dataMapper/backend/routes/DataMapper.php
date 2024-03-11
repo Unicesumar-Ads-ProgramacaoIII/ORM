@@ -1,8 +1,8 @@
 <?php
 
-namespace routes\dataMapper;
+namespace routes;
 
-require_once '../../Connection.php';
+require_once '../../../Connection.php';
 
 use DateTime;
 

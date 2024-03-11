@@ -10,7 +10,7 @@
         email: form.email.value,
       }
       axios
-        .post(`/backend/routes/dataMapper/alterPlayer.php/`, body, {
+        .post(`/dataMapper/backend/routes/alterPlayer.php/`, body, {
           headers: {
             "Content-Type": "application/x-www-form-urlencoded",
           },

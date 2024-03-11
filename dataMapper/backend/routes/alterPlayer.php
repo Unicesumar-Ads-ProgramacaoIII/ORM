@@ -1,9 +1,9 @@
 <?php
 
 require './DataMapper.php';
-require '../../LayoutBuilder.php';
+require '../../../LayoutBuilder.php';
 
-use routes\dataMapper\DataMapper;
+use routes\DataMapper;
 
 if(!isset($_POST['id'])){
   $data = "{'success': false}";

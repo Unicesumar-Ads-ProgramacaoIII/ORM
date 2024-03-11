@@ -3,7 +3,7 @@
         const exclude = confirm("Tem Certeza que deseja exclude este jogador?");
         if(exclude){
             const id = document.getElementById('id').value;
-            window.location.replace(`/backend/routes/dataMapper/deletePlayer.php/?id=${id}`);
+            window.location.replace(`/dataMapper/backend/routes/deletePlayer.php/?id=${id}`);
         }
         event.preventDefault();
     }
